@@ -1,0 +1,11 @@
+#Basic development environment
+
+FROM hguomin/devplus:base
+
+#Install basic dev tools
+RUN apt-get update && \ 
+    apt-get install software-properties-common build-essential git cmake -y
+
+#We have enabled ssh from base image
+CMD [ "/bin/bash", "-c", "env >> /var/rt-env && /usr/sbin/sshd -D" ]
+#CMD ["/usr/sbin/sshd", "-D"]

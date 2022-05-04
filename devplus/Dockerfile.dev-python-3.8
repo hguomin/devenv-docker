@@ -1,15 +1,5 @@
 FROM hguomin/devplus:dev
 
-#JAVA: JDK-11
-RUN apt-get update && \ 
-    apt-get install openjdk-11-jdk-headless ca-certificates-java -y 
-
-RUN apt-get install maven -y && \
-    apt-get clean
-
-ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-
-#PYTHON-3.8
 RUN apt update && \ 
     apt install wget python3-pip python3.8 -y 
     
